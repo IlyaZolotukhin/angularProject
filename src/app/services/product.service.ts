@@ -21,7 +21,7 @@ export class ProductService {
         fromObject: {limit: 5}
       })
     }).pipe(
-      delay(200)/*pipe чтоб замедлить загрузку на 2 сек*/,
+      delay(200)/*pipe чтоб замедлить загрузку на 0.2 сек*/,
       retry(2)/*запрос будет отправлен дважды*/,
       catchError(this.errorHandler.bind(this))
     )
