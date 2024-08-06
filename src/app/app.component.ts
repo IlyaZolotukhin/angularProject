@@ -10,6 +10,7 @@ import {FormsModule} from "@angular/forms";
 import {FilterProductsPipe} from "../app/pipes/filter-products.pipe";
 import {ModalComponent} from "../app/components/modal/modal.component";
 import {CreateProductComponent} from "./components/create-product/create-product.component";
+import {ModalService} from "../app/services/modal.service";
 
 @Component({
   selector: 'app-root',
@@ -26,7 +27,10 @@ export class AppComponent implements OnInit{
   products$: Observable<IProduct[]>
   term = ''
 
-  constructor(private productsService: ProductService) {
+  constructor(
+    private productsService: ProductService,
+  public modalService: ModalService
+  ) {
   }
 
   ngOnInit(): void {
